@@ -1,15 +1,16 @@
 import React from 'react';
+import './Destinations.css'
 
 const DestinationsList = props => {
   return (
-    <div>
+    <div className='DestinationContainer'>
       <h3>Destinations</h3>
       {props.destinations.map(destination =>
-        <li key={destination.id}>
+        <h4 className = 'DestinationCard' key={destination.id}>
           {destination.name} - {destination.country}
           <br/>
-          <img src={destination.image} alt={destination.name} />
-        </li>
+          <img className='DestinationImage' src={destination.image} alt={destination.name} />
+        </h4>
       )}
     </div>
   )
