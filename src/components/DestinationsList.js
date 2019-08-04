@@ -3,7 +3,7 @@ import React from 'react';
 const DestinationsList = props => {
   return (
     <div>
-      DestinationList
+      {props.destinations.map(destination => <li key={destination.id}>{destination.name} - {destination.country}</li>)}
     </div>
   )
 }

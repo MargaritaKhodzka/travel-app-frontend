@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+
 import Destinations from './containers/Destinations';
 
 class App extends React.Component {
@@ -13,4 +13,4 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+export default App;
