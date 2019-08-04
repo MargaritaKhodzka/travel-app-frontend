@@ -1,5 +1,7 @@
 const indexReducer = (state = {destinations: []}, action) => {
-  return state;
+  // checking that action is coming in correctly and
+  // the store is updated by reducer
+  return action.payload;
 }
 
 export default indexReducer;
