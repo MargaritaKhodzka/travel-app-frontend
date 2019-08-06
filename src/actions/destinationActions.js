@@ -1,4 +1,4 @@
-export function fetchDestinations() {
+export const fetchDestinations = () => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations')
     .then(res => res.json())
@@ -6,27 +6,22 @@ export function fetchDestinations() {
       type: 'FETCH_DESTINATIONS',
       payload: destinations
     }))
-  }
-}
+  };
+};
 
-export function addDestination (destinationData) {
+export const addDestination = destinationData => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations', {
       method: 'POST',
-			headers: {
-        'content-type': 'application/json'
-			},
+			headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
 			body: JSON.stringify(destinationData)
 		})
 		.then(res => res.json())
-		.then(data => {
-      dispatch({
-        type: 'ADD_DESTINATION',
-        payload: data
-			})
+		.then(destination => {
+      dispatch({type: 'ADD_DESTINATION', payload: destination})
 	  })
-  }
-}
+  };
+};
 
 export function deleteDestination(destinationId) {
   return (dispatch) => {
@@ -40,5 +35,5 @@ export function deleteDestination(destinationId) {
         id: destinationId
       })
 		})
-  }
-}
+  };
+};

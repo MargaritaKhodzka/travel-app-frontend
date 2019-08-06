@@ -15,7 +15,7 @@ const DestinationCard = ({destination}) => {
       <br/>
       <img className='DestinationImage' src={destination.image} alt={destination.name} />
     </div>
-  )
-}
+  );
+};
 
 export default connect(null, {deleteDestination})(DestinationCard);

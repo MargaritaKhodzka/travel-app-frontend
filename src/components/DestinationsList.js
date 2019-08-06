@@ -1,14 +1,15 @@
 import React from 'react';
-import './Destinations.css'
+import DestinationCard from './DestinationCard';
+import './Destinations.css';
 
 const DestinationsList = ({destinations}) => {
 
   return (
     <div className='DestinationContainer'>
       <h3>Destinations</h3>
-      {destinations.map(destination => <li key={destination.id}>{destination.name} - {destination.country}</li>)}
+      {destinations.map(destination => <DestinationCard key={destination.id} destination={destination} />)}
     </div>
-  )
-}
+  );
+};
 
 export default DestinationsList;

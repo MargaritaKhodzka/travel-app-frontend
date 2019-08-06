@@ -3,15 +3,10 @@ const destinationReducer = (state = {destinations: []}, action) => {
   switch (action.type) {
 
     case 'FETCH_DESTINATIONS':
-      return {destinations: action.payload}
+      return {destinations: action.payload};
 
     case 'ADD_DESTINATION':
-      const destination = {
-        id: action.payload.id,
-        name: action.payload.name,
-        country: action.payload.country
-      }
-      return {...state, destinations: [...state.destinations, destination]}
+      return {...state, destinations: [...state.destinations, action.payload]};
 
     case 'DELETE_DESTINATION':
       const destinations = state.destinations.filter(destination => destination.id !== action.id)
