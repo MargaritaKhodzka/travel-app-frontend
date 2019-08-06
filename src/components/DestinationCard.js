@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteDestination } from '../actions/destinationActions';
 
-const DestinationCard = ({destination}) => {
+const DestinationCard = props => {
+
+  const {destination} = props;
 
   const handleClick = () => {
-    deleteDestination(destination.id)
-  }
+    props.deleteDestination(destination.id);
+  };
 
   return (
     <div key={destination.id} className = 'DestinationCard'>

@@ -23,17 +23,14 @@ export const addDestination = destinationData => {
   };
 };
 
-export function deleteDestination(destinationId) {
+export const deleteDestination = destinationId => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'DELETE'
     })
     .then(res => res.json())
-    .then(data => {
-      dispatch({
-        type: 'DELETE_DESTINATION',
-        id: destinationId
-      })
-		})
-  };
-};
+    .then(destination => {
+      dispatch({type: 'DELETE_DESTINATION', id: destinationId})
+    })
+  }
+}
