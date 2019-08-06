@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import {fetchDestinations} from '../actions/fetchDestinations';
+import {fetchDestinations} from '../actions/destinationActions';
 import DestinationInput from '../components/DestinationInput';
 import DestinationsList from '../components/DestinationsList';
 

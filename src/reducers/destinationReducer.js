@@ -13,6 +13,10 @@ const destinationReducer = (state = {destinations: []}, action) => {
       }
       return {...state, destinations: [...state.destinations, destination]}
 
+    case 'DELETE_DESTINATION':
+      const destinations = state.destinations.filter(destination => destination.id !== action.id)
+      return {...state, destinations}
+
     default:
       return state;
   }

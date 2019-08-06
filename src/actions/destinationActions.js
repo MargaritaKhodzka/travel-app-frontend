@@ -2,11 +2,11 @@ export function fetchDestinations() {
   //thunk function, passing in built in dispatch fn
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations')
-      .then(res => res.json())
-      .then(destinations => dispatch({
-        type: 'FETCH_DESTINATIONS',
-        payload: destinations
-      }))
+    .then(res => res.json())
+    .then(destinations => dispatch({
+      type: 'FETCH_DESTINATIONS',
+      payload: destinations
+    }))
   }
 }
 
@@ -26,5 +26,20 @@ export function addDestination (destinationData) {
         payload: data
 			})
 	  })
+  }
+}
+
+export function deleteDestination(destinationId) {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
+      method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(data => {
+      dispatch({
+        type: 'DELETE_DESTINATION',
+        id: destinationId
+      })
+		})
   }
 }

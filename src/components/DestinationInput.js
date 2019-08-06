@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addDestination } from '../actions/fetchDestinations';
+import { addDestination } from '../actions/destinationActions';
 
 class DestinationInput extends React.Component {
 
