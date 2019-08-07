@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Card, Button, CardBody, CardLink, CardTitle } from 'reactstrap';
 import { deleteDestination } from '../actions/destinationActions';
 
 const DestinationCard = props => {
@@ -12,10 +13,13 @@ const DestinationCard = props => {
 
   return (
     <div key={destination.id} className = 'DestinationCard'>
-      <button onClick={handleClick} className='DeleteButton'>x</button>
-      <h4>{destination.name} - {destination.country}</h4>
-      <br/>
-      <img className='DestinationImage' src={destination.image} alt={destination.name} />
+      <Card>
+        <CardBody>
+          <Button onClick={handleClick} className='DeleteButton'>x</Button>
+          <CardTitle>{destination.name} - {destination.country}</CardTitle>
+        </CardBody>
+        <img className='DestinationImage' src={destination.image} alt={destination.name} />
+      </Card>
     </div>
   );
 };

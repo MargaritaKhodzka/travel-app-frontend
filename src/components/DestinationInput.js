@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { addDestination } from '../actions/destinationActions';
 
 class DestinationInput extends React.Component {
@@ -31,21 +32,36 @@ class DestinationInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>Add a New Destination</h3>
+      <div className='DestinationFormContainer'>
+        <Form className='DestinationForm' onSubmit={this.handleSubmit}>
 
-          <label>Name:</label>
-          <input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br/>
+          <FormGroup row>
+            <h5>Add a New Destination</h5>
+          </FormGroup>
 
-          <label>Country:</label>
-          <input type='text' name='country' value={this.state.country} onChange={this.handleChange} /><br/>
+          <FormGroup row>
+            <Label for='name' sm={2}>Name </Label>
+            <Col md={10}>
+              <Input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br/>
+            </Col>
+          </FormGroup>
 
-          <label>Image:</label>
-          <input type='text' name='image' value={this.state.image} onChange={this.handleChange} /><br/><br/>
+          <FormGroup row>
+            <Label for='country' sm={2}>Country </Label>
+            <Col md={10}>
+              <Input type='text' name='country' value={this.state.country} onChange={this.handleChange} /><br/>
+            </Col>
+          </FormGroup>
 
-          <button>Add Destination</button><br/><br/>
-        </form>
+          <FormGroup row>
+            <Label for='image' sm={2}>Image URL </Label>
+            <Col md={10}>
+              <Input type='text' name='image' value={this.state.image} onChange={this.handleChange} /><br/>
+            </Col>
+          </FormGroup>
+
+          <Button>Add Destination</Button>
+        </Form>
       </div>
     );
   }
