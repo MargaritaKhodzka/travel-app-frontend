@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import DestinationCard from './DestinationCard';
 
 const DestinationsList = props => {
 
   return (
     <div className='DestinationContainer'>
+
       <div>
         <Link to='/destination/new' className='NewDestinationButton' role='button'>Add A New Destination</Link>
       </div>
