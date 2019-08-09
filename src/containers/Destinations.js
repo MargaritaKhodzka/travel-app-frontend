@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import {fetchDestinations} from '../actions/destinationActions';
 import DestinationInput from '../components/DestinationInput';
 import DestinationsList from '../components/DestinationsList';
+import DestinationCard from '../components/DestinationCard';
 
 class Destinations extends React.Component {
 
@@ -16,8 +17,8 @@ class Destinations extends React.Component {
     return (
       <div>
         <Route path='/destinations/new' component={DestinationInput}/>
-        <Route path='/destinations' />
-        <DestinationsList destinations={this.props.destinations} />
+        <Route path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} />
+        <Route exact path='/destinations' render={() => <DestinationsList destinations={this.props.destinations} />} />
       </div>
     )
   }

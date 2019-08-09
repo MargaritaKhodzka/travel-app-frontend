@@ -86,7 +86,7 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-/* .NewDestinationButton {
+.NewDestinationButton {
   display: flex;
   justify-content: center;
   margin: 1.5%;
@@ -100,18 +100,18 @@
   font-size: 17px;
   font-family: Verdana, Geneva, sans-serif;
   color: #000066;
-} */
+}
 
-/* .NewDestinationButton:hover {
+.NewDestinationButton:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   text-decoration: none;
-} */
+}
 
 /* Destination Form */
 
 .DestinationFormContainer {
   background: whitesmoke;
-  margin: 40px;
+  margin: 30px;
   padding: 30px;
 }
 
