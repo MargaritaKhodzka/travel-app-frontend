@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 
 import {fetchDestinations} from '../actions/destinationActions';
 import DestinationInput from '../components/DestinationInput';
@@ -14,7 +15,8 @@ class Destinations extends React.Component {
   render() {
     return (
       <div>
-        <DestinationInput />
+        <Route path='/destinations/new' component={DestinationInput}/>
+        <Route path='/destinations' />
         <DestinationsList destinations={this.props.destinations} />
       </div>
     )

@@ -12,8 +12,8 @@ const DestinationCard = props => {
   };
 
   return (
-    <div key={destination.id} className = 'DestinationCard'>
-      <Card tag='a' href={'/destinations/' + destination.id}>
+    <div className = 'DestinationCard'>
+      <Card>
         <CardBody>
           <Button onClick={handleClick} className='DeleteButton'>x</Button>
           <CardTitle>{destination.name} - {destination.country}</CardTitle>
