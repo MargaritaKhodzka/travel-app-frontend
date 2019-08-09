@@ -16,9 +16,9 @@ class Destinations extends React.Component {
   render() {
     return (
       <div>
-        <Route path='/destinations/new' component={DestinationInput}/>
-        <Route path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} />
-        <Route exact path='/destinations' render={() => <DestinationsList destinations={this.props.destinations} />} />
+        <Route exact path='/destinations' render={(routerProps) => <DestinationsList {...routerProps} destinations={this.props.destinations} />} />
+        {/*<Route path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} /> */}
+        <Route path='/destinations/new' component={DestinationInput} />
       </div>
     )
   }

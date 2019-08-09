@@ -5,20 +5,21 @@ import { deleteDestination } from '../actions/destinationActions';
 
 const DestinationCard = props => {
 
-  const destination = props.destinations[props.match.params.id - 1];
+  const {destination} = props;
+  // props.destination[props.match.params.id - 1];
 
   const handleClick = () => {
-     props.deleteDestination(destination.id);
-   };
+    props.deleteDestination(destination.id);
+  };
 
   return (
     <div className = 'DestinationCard'>
       <Card>
         <CardBody>
           <Button onClick={handleClick} className='DeleteButton'>x</Button>
-          <CardTitle>{destination ? destination.name : null} - {destination ? destination.country : null}</CardTitle>
+          <CardTitle>{destination.name} - {destination.country}</CardTitle>
         </CardBody>
-        <img className='DestinationImage' src={destination ? destination.image : null} alt={destination ? destination.name : null} />
+        <img className='DestinationImage' src={destination.image} alt={destination.name} />
       </Card>
     </div>
   );
