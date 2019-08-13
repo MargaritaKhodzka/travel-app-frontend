@@ -1,21 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Card, Button, CardBody, CardTitle, CardImg, CardFooter } from 'reactstrap';
-import { deleteDestination } from '../actions/destinationActions';
+import { Card, CardBody, CardTitle, CardImg, CardFooter } from 'reactstrap';
 
 const DestinationCard = props => {
 
   let destination = props.match ? props.destinations[props.match.params.id - 1] : props.destination;
 
-  const handleClick = () => {
-    props.deleteDestination(destination.id);
-  };
-
   return (
     <div>
       <Card className = 'DestinationCard'>
         <CardBody>
-          <Button onClick={handleClick} className='DeleteButton'>x</Button>
           <CardTitle>{destination && destination.name} - {destination && destination.country}</CardTitle>
           <CardImg className='DestinationImage' src={destination && destination.image} alt={destination && destination.name} />
         </CardBody>
@@ -30,4 +23,4 @@ const DestinationCard = props => {
   );
 };
 
-export default connect(null, {deleteDestination})(DestinationCard);
+export default DestinationCard;

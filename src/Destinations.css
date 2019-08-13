@@ -53,15 +53,12 @@
 .DestinationCard {
   color: #000066;
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 25px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  font-size: 17px;
+  float: left;
+  margin: 1.5%;
   text-align: center;
-  width: 70%;
-  height: 600px;
+  width: 30%;
+  height: 300px;
   background: whitesmoke;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -74,7 +71,7 @@
 }
 
 .DestinationImage {
-  height: 70%;
+  height: 170px;
   width: 90%;
   align-self: center;
 }
