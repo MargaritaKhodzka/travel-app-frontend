@@ -12,7 +12,11 @@ const DestinationsList = props => {
       </div>
 
       <h3>Destinations</h3>
-      {props.destinations.map(destination => <Link to={`/destinations/${destination.id}`}><DestinationCard key={destination.id} destination={destination} /></Link> )}
+      {props.destinations.map(destination =>
+        <Link key={destination.id} to={`/destinations/${destination.id}`}>
+          <DestinationCard destination={destination} />
+        </Link>
+      )}
     </div>
   );
 };

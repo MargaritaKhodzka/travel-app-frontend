@@ -16,9 +16,9 @@ const DestinationCard = props => {
       <Card>
         <CardBody>
           <Button onClick={handleClick} className='DeleteButton'>x</Button>
-          <CardTitle>{destination.name} - {destination.country}</CardTitle>
+          <CardTitle>{destination && destination.name} - {destination && destination.country}</CardTitle>
         </CardBody>
-        <CardImg className='DestinationImage' src={destination.image} alt={destination.name} />
+        <CardImg className='DestinationImage' src={destination && destination.image} alt={destination && destination.name} />
       </Card>
     </div>
   );

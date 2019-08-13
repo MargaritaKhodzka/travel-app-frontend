@@ -51,6 +51,9 @@
 }
 
 .DestinationCard {
+  color: #000066;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 17px;
   float: left;
   margin: 1.5%;
   text-align: center;
@@ -64,15 +67,6 @@
 .DestinationCard:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   cursor: 'pointer';
-}
-
-.CardLink {
-  color: #000066;
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 17px;
-}
-
-.CardLink:hover {
   text-decoration: none;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import {fetchDestinations} from '../actions/destinationActions';
 import DestinationInput from '../components/DestinationInput';
@@ -16,9 +16,11 @@ class Destinations extends React.Component {
   render() {
     return (
       <div>
-        <Route exact path='/destinations' render={(routerProps) => <DestinationsList {...routerProps} destinations={this.props.destinations} />} />
-        <Route path='/destinations/new' component={DestinationInput} />
-        <Route exact path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} />
+        <Switch>
+          <Route exact path='/destinations' render={(routerProps) => <DestinationsList {...routerProps} destinations={this.props.destinations} />} />
+          <Route exact path='/destinations/new' component={DestinationInput} />
+          <Route exact path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} />
+        </Switch>
       </div>
     )
   }
