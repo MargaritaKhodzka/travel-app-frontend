@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DestinationCard from './DestinationCard';
 
 const DestinationsList = props => {
 
@@ -13,9 +12,11 @@ const DestinationsList = props => {
 
       <h3>Destinations</h3>
       {props.destinations.map(destination =>
-        <Link key={destination.id} to={`/destinations/${destination.id}`}>
-          <DestinationCard destination={destination} />
-        </Link>
+        <li key={destination.id}>
+          <Link to={`/destinations/${destination.id}`}>
+            {destination.name} - {destination.country}
+          </Link>
+        </li>
       )}
     </div>
   );
