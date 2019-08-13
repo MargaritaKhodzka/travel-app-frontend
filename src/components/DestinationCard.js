@@ -5,8 +5,7 @@ import { deleteDestination } from '../actions/destinationActions';
 
 const DestinationCard = props => {
 
-  const {destination} = props;
-  // props.destination[props.match.params.id - 1];
+  let destination = props.match ? props.destinations[props.match.params.id - 1] : props.destination;
 
   const handleClick = () => {
     props.deleteDestination(destination.id);
@@ -14,7 +13,7 @@ const DestinationCard = props => {
 
   return (
     <div className = 'DestinationCard'>
-      <Card className='CardLink' tag='a' href={'/destinations/' + destination.id}>
+      <Card>
         <CardBody>
           <Button onClick={handleClick} className='DeleteButton'>x</Button>
           <CardTitle>{destination.name} - {destination.country}</CardTitle>
