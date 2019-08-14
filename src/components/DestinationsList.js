@@ -1,17 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { Card, Button, CardBody, CardTitle, CardImg } from 'reactstrap';
-import { deleteDestination } from '../actions/destinationActions';
-
+import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
 
 const DestinationsList = props => {
-
-  let destination = props.destination;
-
-  const handleClick = () => {
-    props.deleteDestination(destination.id);
-  };
 
   return (
     <div className='DestinationContainer'>
@@ -25,7 +16,6 @@ const DestinationsList = props => {
         <Link key={destination.id} to={`/destinations/${destination.id}`}>
           <Card className = 'DestinationCard'>
             <CardBody>
-              <Button onClick={handleClick} className='DeleteButton'>x</Button>
               <CardTitle>{destination.name} - {destination.country}</CardTitle>
               <CardImg className='DestinationImage' src={destination.image} alt={destination.name} />
             </CardBody>
@@ -36,4 +26,4 @@ const DestinationsList = props => {
   );
 };
 
-export default connect(null, {deleteDestination})(DestinationsList);
+export default DestinationsList;

@@ -26,7 +26,8 @@ export const addDestination = destinationData => {
 export const deleteDestination = destinationId => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'}
     })
     .then(res => res.json())
     .then(destination => {
