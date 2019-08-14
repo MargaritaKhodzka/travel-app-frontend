@@ -15,7 +15,7 @@ const DestinationCard = props => {
         </CardBody>
       </Card>
 
-      <Categories />
+      <Categories destination={destination} />
     </div>
   );
 };
