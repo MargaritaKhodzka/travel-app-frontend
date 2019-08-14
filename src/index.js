@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import destinationReducer from './reducers/destinationReducer';
 import App from './App';
-import './Destinations.css';
+import './App.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

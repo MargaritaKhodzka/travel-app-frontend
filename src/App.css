@@ -1,17 +1,3 @@
-/* Home Page */
-
-.HomePage {
-  padding: 16px;
-  color: #000066;
-  font-family: Verdana, Geneva, sans-serif;
-  text-align: center;
-}
-
-.HomePageImage {
-  max-height:70%;
-  width: 100%;
-}
-
 /* Navbar */
 
 .NavbarContainer {
@@ -40,6 +26,21 @@
   color: #33FFFF;
   text-decoration: none;
 }
+
+/* Home Page */
+
+.HomePage {
+  padding: 16px;
+  color: #000066;
+  font-family: Verdana, Geneva, sans-serif;
+  text-align: center;
+}
+
+.HomePageImage {
+  max-height:70%;
+  width: 100%;
+}
+
 
 /* Destinations List */
 
