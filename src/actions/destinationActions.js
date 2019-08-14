@@ -32,5 +32,5 @@ export const deleteDestination = destinationId => {
     .then(destination => {
       dispatch({type: 'DELETE_DESTINATION', id: destinationId})
     })
-  }
-}
+  };
+};
