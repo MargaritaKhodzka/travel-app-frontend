@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardImg, CardFooter } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
+import Categories from '../containers/Categories';
 
 const DestinationCard = props => {
 
@@ -7,18 +8,14 @@ const DestinationCard = props => {
 
   return (
     <div>
-      <Card className = 'DestinationCard'>
+      <Card className = 'DestinationShow'>
         <CardBody>
           <CardTitle>{destination && destination.name} - {destination && destination.country}</CardTitle>
           <CardImg className='DestinationImage' src={destination && destination.image} alt={destination && destination.name} />
         </CardBody>
-
-        <CardFooter>
-          {destination && destination.categories.map(category =>
-            category.title + ' '
-          )}
-        </CardFooter>
       </Card>
+
+      <Categories />
     </div>
   );
 };

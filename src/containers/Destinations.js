@@ -22,14 +22,14 @@ class Destinations extends React.Component {
           <Route exact path='/destinations/:id' render={(routerProps) => <DestinationCard {...routerProps} destinations={this.props.destinations} />} />
         </Switch>
       </div>
-    )
+    );
   }
-}
+};
 
 const mapStateToProps = state => {
   return {
     destinations: state.destinations
   }
-}
+};
 
 export default connect(mapStateToProps, {fetchDestinations})(Destinations);
