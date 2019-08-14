@@ -40,23 +40,23 @@ class DestinationInput extends React.Component {
           </FormGroup>
 
           <FormGroup row>
-            <Label for='name' sm={2}>Name </Label>
+            <Label for='name' sm={2}>Name</Label>
             <Col md={10}>
-              <Input type='text' name='name' value={this.state.name} onChange={this.handleChange} /><br/>
+              <Input type='text' name='name' value={this.state.name} onChange={this.handleChange} />
             </Col>
           </FormGroup>
 
           <FormGroup row>
-            <Label for='country' sm={2}>Country </Label>
+            <Label for='country' sm={2}>Country</Label>
             <Col md={10}>
-              <Input type='text' name='country' value={this.state.country} onChange={this.handleChange} /><br/>
+              <Input type='text' name='country' value={this.state.country} onChange={this.handleChange} />
             </Col>
           </FormGroup>
 
           <FormGroup row>
-            <Label for='image' sm={2}>Image URL </Label>
+            <Label for='image' sm={2}>Image URL</Label>
             <Col md={10}>
-              <Input type='text' name='image' value={this.state.image} onChange={this.handleChange} /><br/>
+              <Input type='text' name='image' value={this.state.image} onChange={this.handleChange} />
             </Col>
           </FormGroup>
 
