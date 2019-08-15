@@ -5,7 +5,7 @@ import Categories from '../containers/Categories';
 import { deleteDestination } from '../actions/destinationActions';
 
 
-const DestinationCard = props => {
+const DestinationShow = props => {
 
   let destination = props.match ? props.destinations[props.match.params.id - 1] : props.destination;
 
@@ -30,4 +30,4 @@ const DestinationCard = props => {
   );
 };
 
-export default connect(null, {deleteDestination})(DestinationCard);
+export default connect(null, {deleteDestination})(DestinationShow);
