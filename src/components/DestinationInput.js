@@ -28,6 +28,8 @@ class DestinationInput extends React.Component {
       country: '',
       image: ''
     });
+    const path = `/destinations`;
+    this.props.history.push(path);
   };
 
   render() {
