@@ -10,7 +10,6 @@ const CategoriesList = props => {
           <ListGroupItem key={category.id}>{category.title}</ListGroupItem>
         )}
       </ListGroup>
-
     </div>
   );
 };

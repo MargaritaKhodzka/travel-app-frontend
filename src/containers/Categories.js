@@ -8,7 +8,7 @@ class Categories extends React.Component {
   render() {
     return (
       <div>
-        <CategoryInput />
+        <CategoryInput destination={this.props.destination} />
         <CategoriesList categories={this.props.destination && this.props.destination.categories} />
       </div>
     );

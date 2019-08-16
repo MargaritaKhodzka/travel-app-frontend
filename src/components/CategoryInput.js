@@ -1,5 +1,7 @@
 import React from 'react';
-import {Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { connect } from 'react-redux';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { addCategory } from '../actions/categoryActions';
 
 class CategoryInput extends React.Component {
 
@@ -15,7 +17,7 @@ class CategoryInput extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addCategory(this.state);
+    this.props.addCategory(this.state, this.props.destination.id);
     this.setState({
       title: ''
     });
@@ -30,7 +32,7 @@ class CategoryInput extends React.Component {
           </FormGroup>
 
           <FormGroup row>
-            <Label for='name' sm={2}>Title</Label>
+            <Label for='title' sm={2}>Title</Label>
             <Col md={10}>
               <Input type='text' name='title' value={this.state.title} onChange={this.handleChange}/>
             </Col>
@@ -43,4 +45,4 @@ class CategoryInput extends React.Component {
   }
 };
 
-export default CategoryInput;
+export default connect(null, {addCategory})(CategoryInput);
