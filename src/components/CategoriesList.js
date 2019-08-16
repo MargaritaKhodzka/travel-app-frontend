@@ -1,14 +1,16 @@
 import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
-const CategoriesList = () => {
+const CategoriesList = props => {
 
   return (
     <div className='CategoriesList'>
       <ListGroup>
-        <ListGroupItem>Category 1</ListGroupItem>
-        <ListGroupItem>Category 2</ListGroupItem>
+        {props.categories && props.categories.map(category =>
+          <ListGroupItem key={category.id}>{category.title}</ListGroupItem>
+        )}
       </ListGroup>
+
     </div>
   );
 };

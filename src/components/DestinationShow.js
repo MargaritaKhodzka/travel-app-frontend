@@ -7,7 +7,7 @@ import { deleteDestination } from '../actions/destinationActions';
 
 const DestinationShow = props => {
 
-  let destination = props.match ? props.destinations[props.match.params.id - 1] : props.destination;
+  let destination = props.destinations.filter(destination => destination.id == props.match.params.id)[0];
 
   const handleClick = () => {
     props.deleteDestination(destination.id);
