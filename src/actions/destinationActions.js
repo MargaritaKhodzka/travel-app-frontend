@@ -35,3 +35,16 @@ export const deleteDestination = destinationId => {
     })
   };
 };
+
+export const toggleVisited = (destinationId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+    })
+    .then(res => res.json())
+    .then(destination => {
+      dispatch({type: 'TOGGLE_VISITED', id: destinationId})
+    })
+  };
+};

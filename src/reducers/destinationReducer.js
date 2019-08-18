@@ -22,6 +22,9 @@ const destinationReducer = (state = {destinations: []}, action) => {
       })
       return {...state, destinations: destinations}
 
+    case 'TOGGLE_VISITED':
+      return
+
     default:
       return state;
   }
