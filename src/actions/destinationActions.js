@@ -36,11 +36,12 @@ export const deleteDestination = destinationId => {
   };
 };
 
-export const toggleVisited = destinationId => {
+export const toggleVisited = (destination, destinationId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'PATCH',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(destination)
     })
     .then(res => res.json())
     .then(destination => {

@@ -16,7 +16,7 @@ const DestinationShow = props => {
   };
 
   const handleVisited = () => {
-    props.toggleVisited(destination.id)
+    props.toggleVisited(destination, destination.id)
   }
 
   return (
