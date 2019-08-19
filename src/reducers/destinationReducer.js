@@ -23,7 +23,14 @@ const destinationReducer = (state = {destinations: []}, action) => {
       return {...state, destinations: destinations}
 
     case 'TOGGLE_VISITED':
-      return
+      const toggleDestination = state.destinations.map(destination => {
+        if (destination.id !== action.id) {
+          return destination
+        } else {
+          return {...destination, visited: !destination.visited}
+        }
+      })
+      return {...state, destinations: toggleDestination}
 
     default:
       return state;

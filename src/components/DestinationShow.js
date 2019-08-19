@@ -15,8 +15,8 @@ const DestinationShow = props => {
     props.history.push(path);
   };
 
-  const handleVisited = (destinationId, visitedStatus) => {
-    props.toggleVisited(destinationId, visitedStatus)
+  const handleVisited = () => {
+    props.toggleVisited(destination.id)
   }
 
   return (
@@ -27,11 +27,8 @@ const DestinationShow = props => {
           <CardTitle>{destination && destination.name} - {destination && destination.country}</CardTitle>
           <CardImg className='DestinationImage' src={destination && destination.image} alt={destination && destination.name} />
         </CardBody>
-        <Button
-          onClick={handleVisited}
-          className='VisitedButton'
-          style={{text: destination && destination.visited ? 'Visited' : 'Add to Visited'}}>
-          Add to Visited
+        <Button onClick={handleVisited} className='VisitedButton'>
+          {destination && destination.visited === false ? 'Add to Visited' : 'Visited'}
         </Button>
         <Button className='BucketListButton'>Add to Bucket List</Button>
       </Card>
