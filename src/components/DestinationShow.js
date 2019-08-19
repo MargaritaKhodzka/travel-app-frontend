@@ -31,7 +31,7 @@ const DestinationShow = props => {
           onClick={handleVisited}
           className='VisitedButton'
           style={{text: destination && destination.visited ? 'Visited' : 'Add to Visited'}}>
-          V
+          Add to Visited
         </Button>
         <Button className='BucketListButton'>Add to Bucket List</Button>
       </Card>
