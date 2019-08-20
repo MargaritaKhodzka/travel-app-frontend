@@ -49,3 +49,17 @@ export const toggleVisited = (destination, destinationId) => {
     })
   };
 };
+
+export const toggleBucketList = (destination, destinationId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(destination)
+    })
+    .then(res => res.json())
+    .then(destination => {
+      dispatch({type: 'TOGGLE_BUCKET_LIST', id: destinationId})
+    })
+  };
+};

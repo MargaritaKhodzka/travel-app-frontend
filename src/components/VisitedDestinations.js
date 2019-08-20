@@ -24,7 +24,6 @@ const VisitedDestinations = props => {
         }
       })}
     </div>
-
   )
 }
 

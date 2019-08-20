@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 import Categories from '../containers/Categories';
-import { deleteDestination, toggleVisited } from '../actions/destinationActions';
+import { deleteDestination, toggleVisited, toggleBucketList } from '../actions/destinationActions';
 
 
 const DestinationShow = props => {
@@ -19,6 +19,10 @@ const DestinationShow = props => {
     props.toggleVisited(destination, destination.id)
   }
 
+  const handleBucketList = () => {
+    props.toggleBucketList(destination, destination.id)
+  }
+
   return (
     <div>
       <Card className = 'DestinationShow'>
@@ -30,7 +34,9 @@ const DestinationShow = props => {
         <Button onClick={handleVisited} className='VisitedButton'>
           {destination && destination.visited === false ? 'Add to Visited' : 'Visited'}
         </Button>
-        <Button className='BucketListButton'>Add to Bucket List</Button>
+        <Button onClick={handleBucketList} className='BucketListButton'>
+          {destination && destination.bucket_list === false ? 'Add to Bucket List' : 'Added to Bucket List'}
+        </Button>
       </Card>
 
       <Categories destination={destination} />
@@ -38,4 +44,4 @@ const DestinationShow = props => {
   );
 };
 
-export default connect(null, {deleteDestination, toggleVisited})(DestinationShow);
+export default connect(null, {deleteDestination, toggleVisited, toggleBucketList})(DestinationShow);
