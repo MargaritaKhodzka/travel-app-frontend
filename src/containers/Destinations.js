@@ -20,8 +20,8 @@ class Destinations extends React.Component {
       <div>
         <Switch>
           <Route path='/destinations/new' component={DestinationInput} />
-          <Route exact path='/destinations/visited' component={VisitedDestinations} />
-          <Route exact path='/destinations/bucket-list' component={BucketList} />
+          <Route path='/destinations/visited' render={(routerProps) => <VisitedDestinations {...routerProps} destinations={this.props.destinations} />} />
+          <Route path='/destinations/bucket-list' component={BucketList} />
           <Route path='/destinations/:id' render={(routerProps) => <DestinationShow {...routerProps} destinations={this.props.destinations} />} />
           <Route path='/destinations' render={(routerProps) => <DestinationsList {...routerProps} destinations={this.props.destinations} />} />
         </Switch>
