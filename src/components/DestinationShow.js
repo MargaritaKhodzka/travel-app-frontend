@@ -35,7 +35,7 @@ const DestinationShow = props => {
           {destination && destination.visited === false ? 'Add to Visited' : 'Visited'}
         </Button>
         <Button onClick={handleBucketList} className='BucketListButton'>
-          {destination && destination.bucket_list === false ? 'Add to Bucket List' : 'Added to Bucket List'}
+          {destination && destination.bucket_list === false ? 'Add to Bucket List' : 'In your Bucket List'}
         </Button>
       </Card>
 

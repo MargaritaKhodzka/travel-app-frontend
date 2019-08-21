@@ -37,29 +37,33 @@ export const deleteDestination = destinationId => {
 };
 
 export const toggleVisited = (destination, destinationId) => {
+  let updatedVisited = {...destination, visited: !destination.visited};
+
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'PATCH',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(destination)
+      body: JSON.stringify({destination: updatedVisited})
     })
     .then(res => res.json())
     .then(destination => {
-      dispatch({type: 'TOGGLE_VISITED', id: destinationId})
+      dispatch({type: 'TOGGLE_VISITED', payload: destination})
     })
   };
 };
 
 export const toggleBucketList = (destination, destinationId) => {
+  let updatedBucketList = {...destination, bucket_list: !destination.bucket_list};
+
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'PATCH',
       headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(destination)
+      body: JSON.stringify({destination: updatedBucketList})
     })
     .then(res => res.json())
     .then(destination => {
-      dispatch({type: 'TOGGLE_BUCKET_LIST', id: destinationId})
+      dispatch({type: 'TOGGLE_BUCKET_LIST', payload: destination})
     })
   };
 };
