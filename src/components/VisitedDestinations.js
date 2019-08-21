@@ -27,7 +27,7 @@ const VisitedDestinations = props => {
         }
       })}
     </div>
-  )
-}
+  );
+};
 
 export default VisitedDestinations;

@@ -45,4 +45,4 @@ class CategoryInput extends React.Component {
   }
 };
 
-export default connect(null, {addCategory})(CategoryInput);
+export default connect(null, { addCategory })(CategoryInput);

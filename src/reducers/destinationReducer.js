@@ -1,4 +1,4 @@
-const destinationReducer = (state = {destinations: []}, action) => {
+const destinationReducer = (state = { destinations: [] }, action) => {
 
   switch (action.type) {
 

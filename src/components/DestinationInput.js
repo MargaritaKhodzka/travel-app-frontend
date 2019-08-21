@@ -5,13 +5,10 @@ import { addDestination } from '../actions/destinationActions';
 
 class DestinationInput extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      country: '',
-      image: ''
-    };
+  state = {
+    name: '',
+    country: '',
+    image: ''
   };
 
   handleChange = e => {
@@ -69,4 +66,4 @@ class DestinationInput extends React.Component {
   }
 };
 
-export default connect(null, {addDestination})(DestinationInput);
+export default connect(null, { addDestination })(DestinationInput);

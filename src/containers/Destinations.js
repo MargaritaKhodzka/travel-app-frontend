@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-
-import {fetchDestinations} from '../actions/destinationActions';
+import { fetchDestinations } from '../actions/destinationActions';
 import DestinationInput from '../components/DestinationInput';
 import DestinationsList from '../components/DestinationsList';
 import DestinationShow from '../components/DestinationShow';
@@ -36,4 +35,4 @@ const mapStateToProps = state => {
   }
 };
 
-export default connect(mapStateToProps, {fetchDestinations})(Destinations);
+export default connect(mapStateToProps, { fetchDestinations })(Destinations);

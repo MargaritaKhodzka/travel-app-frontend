@@ -7,9 +7,9 @@ import { deleteDestination, toggleVisited, toggleBucketList } from '../actions/d
 
 const DestinationShow = props => {
 
-  let destination = props.destinations.filter(destination => destination.id == props.match.params.id)[0];
+  let destination = props.destinations.filter(destination => destination.id === parseInt(props.match.params.id))[0];
 
-  const handleClick = () => {
+  const handleDelete = () => {
     props.deleteDestination(destination.id);
     const path = `/destinations`;
     props.history.push(path);
@@ -27,7 +27,7 @@ const DestinationShow = props => {
     <div>
       <Card className = 'DestinationShow'>
         <CardBody>
-          <Button onClick={handleClick} className='DeleteButton'>x</Button>
+          <Button onClick={handleDelete} className='DeleteButton'>x</Button>
           <CardTitle>{destination && destination.name} - {destination && destination.country}</CardTitle>
           <CardImg className='DestinationImage' src={destination && destination.image} alt={destination && destination.name} />
         </CardBody>

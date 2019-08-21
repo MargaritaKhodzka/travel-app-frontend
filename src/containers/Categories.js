@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CategoryInput from '../components/CategoryInput';
 import CategoriesList from '../components/CategoriesList';
 
