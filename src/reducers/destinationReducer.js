@@ -12,16 +12,6 @@ const destinationReducer = (state = {destinations: []}, action) => {
       const filteredDestinations = state.destinations.filter(destination => destination.id !== action.id)
       return {...state, filteredDestinations}
 
-    case 'ADD_CATEGORY':
-      const destinations = state.destinations.map(destination => {
-        if (destination.id === action.payload.id) {
-          return action.payload
-        } else {
-          return destination
-        }
-      })
-      return {...state, destinations: destinations}
-
     case 'TOGGLE_VISITED':
       const visitDestination = state.destinations.map(destination => {
         if (destination.id !== action.payload.id) {
@@ -41,6 +31,26 @@ const destinationReducer = (state = {destinations: []}, action) => {
         }
       })
       return {...state, destinations: bucketListDestination}
+
+    case 'ADD_CATEGORY':
+      const addCategoryDestination = state.destinations.map(destination => {
+        if (destination.id === action.payload.id) {
+          return action.payload
+        } else {
+          return destination
+        }
+      })
+      return {...state, destinations: addCategoryDestination}
+
+    case 'DELETE_CATEGORY':
+      const deleteCategoryDestination = state.destinations.map(destination => {
+        if (destination.id === action.payload.id) {
+          return action.payload
+        } else {
+          return destination
+        }
+      })
+      return {...state, destinations: deleteCategoryDestination}
 
     default:
       return state;

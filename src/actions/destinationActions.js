@@ -37,7 +37,7 @@ export const deleteDestination = destinationId => {
 };
 
 export const toggleVisited = (destination, destinationId) => {
-  let updatedVisited = {...destination, visited: !destination.visited};
+  const updatedVisited = {...destination, visited: !destination.visited};
 
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
@@ -53,7 +53,7 @@ export const toggleVisited = (destination, destinationId) => {
 };
 
 export const toggleBucketList = (destination, destinationId) => {
-  let updatedBucketList = {...destination, bucket_list: !destination.bucket_list};
+  const updatedBucketList = {...destination, bucket_list: !destination.bucket_list};
 
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {

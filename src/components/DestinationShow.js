@@ -44,4 +44,4 @@ const DestinationShow = props => {
   );
 };
 
-export default connect(null, {deleteDestination, toggleVisited, toggleBucketList})(DestinationShow);
+export default connect(null, { deleteDestination, toggleVisited, toggleBucketList })(DestinationShow);
