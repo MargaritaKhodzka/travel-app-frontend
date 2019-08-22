@@ -13,25 +13,24 @@ export const addDestination = destinationData => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations', {
       method: 'POST',
-			headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-			body: JSON.stringify(destinationData)
-		})
-		.then(res => res.json())
-		.then(destination => {
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(destinationData)
+    })
+    .then(res => res.json())
+    .then(destination => {
       dispatch({type: 'ADD_DESTINATION', payload: destination})
-	  })
+    })
   };
 };
 
 export const deleteDestination = destinationId => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
-      method: 'DELETE',
-      headers: {'Content-Type': 'application/json'}
+      method: 'DELETE'
     })
     .then(res => res.json())
     .then(destination => {
-      dispatch({type: 'DELETE_DESTINATION', id: destinationId})
+      dispatch({type: 'DELETE_DESTINATION', payload: destination.id})
     })
   };
 };
