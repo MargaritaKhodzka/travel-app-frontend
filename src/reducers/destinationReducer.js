@@ -13,24 +13,15 @@ const destinationReducer = (state = { destinations: [] }, action) => {
       return {...state, destinations: filteredDestinations}
 
     case 'TOGGLE_VISITED':
-      const visitDestination = state.destinations.map(destination => {
-        if (destination.id !== action.payload.id) {
-          return destination
-        } else {
-          return action.payload
-        }
-      })
-      return {...state, destinations: visitDestination}
-
     case 'TOGGLE_BUCKET_LIST':
-      const bucketListDestination = state.destinations.map(destination => {
+      const destination = state.destinations.map(destination => {
         if (destination.id !== action.payload.id) {
           return destination
         } else {
           return action.payload
         }
       })
-      return {...state, destinations: bucketListDestination}
+      return {...state, destinations: destination}
 
     case 'ADD_CATEGORY':
       const addCategoryDestination = state.destinations.map(destination => {

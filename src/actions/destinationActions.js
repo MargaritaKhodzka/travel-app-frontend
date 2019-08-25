@@ -13,7 +13,7 @@ export const addDestination = destinationData => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(destinationData)
     })
     .then(res => res.json())
@@ -41,7 +41,7 @@ export const toggleVisited = (destination, destinationId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'PATCH',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({destination: updatedVisited})
     })
     .then(res => res.json())
@@ -57,7 +57,7 @@ export const toggleBucketList = (destination, destinationId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/destinations/${destinationId}`, {
       method: 'PATCH',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({destination: updatedBucketList})
     })
     .then(res => res.json())
