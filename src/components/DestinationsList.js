@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
 import DestinationCard from './DestinationCard';
 
 class DestinationsList extends React.Component {
