@@ -1,29 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
+import DestinationCard from './DestinationCard';
 
-const DestinationsList = props => {
+class DestinationsList extends React.Component {
 
-  return (
-    <div className='DestinationContainer'>
+  render () {
+    return (
+      <div className='DestinationContainer'>
 
-      <div>
-        <Link to='/destinations/new' className='NewDestinationButton' role='button'>Add A New Destination</Link>
+        <div>
+          <Link to='/destinations/new' className='NewDestinationButton' role='button'>Add A New Destination</Link>
+        </div>
+
+        <h3>Destinations</h3>
+        {this.props.destinations.map(destination =>
+          <div key={destination.id}>
+            <DestinationCard destination={destination} />
+          </div>
+        )}
       </div>
-
-      <h3>Destinations</h3>
-      {props.destinations.map(destination =>
-        <Link key={destination.id} to={`/destinations/${destination.id}`}>
-          <Card className = 'DestinationCard'>
-            <CardBody>
-              <CardTitle>{destination.name} - {destination.country}</CardTitle>
-              <CardImg className='DestinationImage' src={destination.image} alt={destination.name} />
-            </CardBody>
-          </Card>
-        </Link>
-      )}
-    </div>
-  );
+    );
+  }
 };
 
 export default DestinationsList;
