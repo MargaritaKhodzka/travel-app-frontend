@@ -9,7 +9,7 @@ export const fetchDestinations = () => {
   };
 };
 
-export const addDestination = destinationData => {
+export const addDestination = (destinationData, history, path) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/destinations', {
       method: 'POST',
@@ -18,6 +18,7 @@ export const addDestination = destinationData => {
     })
     .then(res => res.json())
     .then(destination => {
+      history.push(path)
       dispatch({type: 'ADD_DESTINATION', payload: destination})
     })
   };

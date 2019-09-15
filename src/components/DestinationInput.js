@@ -19,14 +19,13 @@ class DestinationInput extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addDestination(this.state);
+    const path = `/destinations`;
+    this.props.addDestination(this.state, this.props.history, path);
     this.setState({
       name: '',
       country: '',
       image: ''
     });
-    const path = `/destinations`;
-    this.props.history.push(path);
   };
 
   render() {
